@@ -7,7 +7,7 @@ const UrlLinks = ({ url }: Props) => {
   const [isCopied, setIsCopied] = useState(false);
   const copyLongUrl = () => {
     navigator.clipboard
-      .writeText(url.longUrl)
+      .writeText(url.shortUrl)
       .then(() => {
         setIsCopied(true);
         setTimeout(() => {
