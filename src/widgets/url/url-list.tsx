@@ -1,6 +1,6 @@
 import React from 'react'
 import { IUrl } from './model/types'
-import UrlItem from 'features/url/url-item'
+import UrlItem from 'features/url/ui/url-item'
 interface UrlListProps{
     urls:IUrl[]
 }

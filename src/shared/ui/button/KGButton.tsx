@@ -5,7 +5,7 @@ import React from 'react';
 type Props = {
   className?: string;
   children: React.ReactNode;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 const KGButton: React.FC<Props> = ({ children, className, onClick }) => {

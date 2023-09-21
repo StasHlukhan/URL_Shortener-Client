@@ -14,6 +14,7 @@ const LoginForm: React.FC = () => {
   const [state, setState] = useState<IUser>({
     username: '',
     password: '',
+    role: '',
   });
 
   const handleLogin = async (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -22,7 +23,6 @@ const LoginForm: React.FC = () => {
       setIsLoading(true);
       const response = await UserService.loginUser(state);
       if (response) {
-        
         dispatch(setUser(response.data.user));
         navigate('/shortener');
       }
@@ -33,11 +33,10 @@ const LoginForm: React.FC = () => {
       setIsLoading(false);
       console.log(err);
     }
-
     setState({
       username: '',
-
       password: '',
+      role: '',
     });
   };
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,16 +53,12 @@ const LoginForm: React.FC = () => {
         <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">Sign in to platform</h2>
         <form className="mt-8 flex flex-col items-end" action="#">
           <div className="flex flex-col space-y-6 w-full">
-            
             <div>
-              <label  className="text-sm font-medium text-gray-900 block mb-2">
-                Your username
-              </label>
+              <label className="text-sm font-medium text-gray-900 block mb-2">Your username</label>
 
               <KGInput
                 placeholder="name"
                 name="username"
-
                 type="text"
                 value={state.username}
                 onChange={handleChange}
@@ -92,7 +87,6 @@ const LoginForm: React.FC = () => {
           </KGButton>
         </form>
       </div>
-     
     </div>
   );
 };

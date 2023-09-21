@@ -20,7 +20,7 @@ const UrlLinks = ({ url }: Props) => {
   };
   return (
     <>
-      <div className="w-1/6 p-4 whitespace-nowrap text-base font-normal flex   text-gray-900">
+      <div className="w-1/4 p-4 whitespace-nowrap text-base font-normal flex   text-gray-900">
         {url.longUrl.length > 30 ? (
           <div className="border-2 w-full  p-2 border-zinc-600 flex justify-between">
             {url.longUrl.slice(0, 20)}...
@@ -31,7 +31,7 @@ const UrlLinks = ({ url }: Props) => {
           </div>
         )}
       </div>
-      <div className=" border-2 justify-between  border-zinc-600 flex w-1/4 p-2 whitespace-nowrap text-base font-normal text-gray-900">
+      <div className=" border-2 justify-between  border-zinc-600 flex w-1/3 p-2 whitespace-nowrap text-base font-normal text-gray-900">
         {url.shortUrl}{' '}
         <button onClick={copyLongUrl} className="ml-2 underline flex justify-center">
           {isCopied ? (
